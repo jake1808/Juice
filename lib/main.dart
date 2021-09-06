@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        initialRoute: '/juicedetails',
+        initialRoute: '/',
         routes: {
           '/': (context) => const MyHomePage(),
           '/juicedetails': (context) => JuiceDetaile(),

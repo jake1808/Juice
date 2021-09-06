@@ -25,7 +25,7 @@ class CounterWidget extends StatelessWidget {
             color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(18)),
-      margin: const EdgeInsets.only(top: 428),
+      margin: const EdgeInsets.only(top: 40),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [

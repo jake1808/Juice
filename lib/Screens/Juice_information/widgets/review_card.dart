@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:juice/repository/review_list.dart';
+
 import 'simple_rating_bar.dart';
 
 class RatingCard extends StatelessWidget {
@@ -76,15 +78,6 @@ class RatingCard extends StatelessWidget {
     );
   }
 }
-
-final List<String> reviewImages = [
-  'https://flutter4fun.com/wp-content/uploads/2021/09/1.png',
-  'https://flutter4fun.com/wp-content/uploads/2021/09/2.png',
-  'https://flutter4fun.com/wp-content/uploads/2021/09/3.png',
-  'https://flutter4fun.com/wp-content/uploads/2021/09/4.png',
-];
-final addImageUrl =
-    'https://flutter4fun.com/wp-content/uploads/2021/09/add.png';
 
 class ReviewList extends StatelessWidget {
   const ReviewList({Key? key}) : super(key: key);

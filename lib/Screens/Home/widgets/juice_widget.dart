@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:juice/Screens/Juice_information/detail_page.dart';
 
 import '../../../constants.dart';
 import '../../../models/jucie.dart';
@@ -140,6 +141,10 @@ class JuiceText extends StatelessWidget {
           child: MyButton(
             text: 'Buy Now',
             textColor: juices.color,
+            function: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => JuiceDetaile()));
+            },
           ),
         )
       ],
