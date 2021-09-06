@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:juice/models/jucie.dart';
 
 import 'my_button.dart';
 
 class JuiceWidget extends StatelessWidget {
-  const JuiceWidget({Key? key}) : super(key: key);
+  final JuiceEntity juices;
+  const JuiceWidget({Key? key, required this.juices}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class JuiceWidget extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: topPadding),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFDC691F),
+                  color: juices.color,
                   borderRadius: BorderRadius.circular(24),
                 ),
               ),
@@ -35,7 +37,7 @@ class JuiceWidget extends StatelessWidget {
                         children: [
                           // ignore: prefer_const_constructors
                           Text(
-                            "Besom Orange Juice",
+                            juices.name,
                             //TODO: replace text style
                             // ignore: prefer_const_constructors
                             style: TextStyle(
@@ -53,7 +55,7 @@ class JuiceWidget extends StatelessWidget {
                                   ),
                                 ),
                                 TextSpan(
-                                  text: '25.99',
+                                  text: juices.price,
                                   style: TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w800,
@@ -82,7 +84,7 @@ class JuiceWidget extends StatelessWidget {
                     child: SizedBox(
                       width: imageWidth,
                       child: Image.network(
-                        "https://flutter4fun.com/wp-content/uploads/2021/09/juice2.png",
+                        juices.image,
                       ),
                     ),
                   ),
