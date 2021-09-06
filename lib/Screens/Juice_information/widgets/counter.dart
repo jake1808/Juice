@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../models/jucie.dart';
 
 import '../../../constants.dart';
+import '../../../models/jucie.dart';
 
 class CounterWidget extends StatelessWidget {
   const CounterWidget({
@@ -25,6 +25,7 @@ class CounterWidget extends StatelessWidget {
             color: Colors.white,
           ),
           borderRadius: BorderRadius.circular(18)),
+      margin: const EdgeInsets.only(top: 428),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -55,7 +56,7 @@ class CounterWidget extends StatelessWidget {
           GestureDetector(
               onTap: onIncrement,
               child: const Icon(Icons.add, color: Colors.white)),
-          const SizedBox(width: 16)
+          const SizedBox(width: 16),
         ],
       ),
     );
