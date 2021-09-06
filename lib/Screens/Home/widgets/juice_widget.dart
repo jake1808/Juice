@@ -18,13 +18,7 @@ class JuiceWidget extends StatelessWidget {
           final leftPadding = constraints.maxWidth * 0.1;
           return Stack(
             children: [
-              Container(
-                margin: EdgeInsets.only(top: topPadding),
-                decoration: BoxDecoration(
-                  color: juices.color,
-                  borderRadius: BorderRadius.circular(24),
-                ),
-              ),
+              CardBackground(topPadding: topPadding, juices: juices),
               Row(
                 children: [
                   Expanded(
@@ -33,50 +27,7 @@ class JuiceWidget extends StatelessWidget {
                         top: topPadding,
                         left: leftPadding,
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // ignore: prefer_const_constructors
-                          Text(
-                            juices.name,
-                            //TODO: replace text style
-                            // ignore: prefer_const_constructors
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                const TextSpan(
-                                  text: '\$',
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: juices.price,
-                                  style: const TextStyle(
-                                    fontSize: 30,
-                                    fontWeight: FontWeight.w800,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 32,
-                            width: 80,
-                            child: MyButton(
-                              text: 'Buy Now',
-                              textColor: juices.color,
-                            ),
-                          )
-                        ],
-                      ),
+                      child: JuiceText(juices: juices),
                     ),
                   ),
                   Padding(
@@ -84,12 +35,7 @@ class JuiceWidget extends StatelessWidget {
                       top: topPadding,
                       left: leftPadding,
                     ),
-                    child: SizedBox(
-                      width: imageWidth,
-                      child: Image.network(
-                        juices.image,
-                      ),
-                    ),
+                    child: JuiceImage(imageWidth: imageWidth, juices: juices),
                   ),
                 ],
               ),
@@ -97,6 +43,106 @@ class JuiceWidget extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+}
+
+class JuiceImage extends StatelessWidget {
+  const JuiceImage({
+    Key? key,
+    required this.imageWidth,
+    required this.juices,
+  }) : super(key: key);
+
+  final double imageWidth;
+  final JuiceEntity juices;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: imageWidth,
+      child: Image.network(
+        juices.image,
+      ),
+    );
+  }
+}
+
+class CardBackground extends StatelessWidget {
+  const CardBackground({
+    Key? key,
+    required this.topPadding,
+    required this.juices,
+  }) : super(key: key);
+
+  final double topPadding;
+  final JuiceEntity juices;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(top: topPadding),
+      decoration: BoxDecoration(
+        color: juices.color,
+        borderRadius: BorderRadius.circular(24),
+      ),
+    );
+  }
+}
+
+class JuiceText extends StatelessWidget {
+  const JuiceText({
+    Key? key,
+    required this.juices,
+  }) : super(key: key);
+
+  final JuiceEntity juices;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // ignore: prefer_const_constructors
+        Text(
+          juices.name,
+          //TODO: replace text style
+          // ignore: prefer_const_constructors
+          style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+          ),
+        ),
+        RichText(
+          text: TextSpan(
+            children: [
+              const TextSpan(
+                text: '\$',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+              TextSpan(
+                text: juices.price,
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w800,
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(
+          height: 32,
+          width: 80,
+          child: MyButton(
+            text: 'Buy Now',
+            textColor: juices.color,
+          ),
+        )
+      ],
     );
   }
 }
