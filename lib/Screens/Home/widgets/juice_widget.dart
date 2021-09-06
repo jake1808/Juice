@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:juice/models/jucie.dart';
+import '../../../models/jucie.dart';
 
 import 'my_button.dart';
 
@@ -29,7 +29,10 @@ class JuiceWidget extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: EdgeInsets.only(top: topPadding),
+                      padding: EdgeInsets.only(
+                        top: topPadding,
+                        left: leftPadding,
+                      ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         mainAxisSize: MainAxisSize.max,
@@ -48,7 +51,7 @@ class JuiceWidget extends StatelessWidget {
                           RichText(
                             text: TextSpan(
                               children: [
-                                TextSpan(
+                                const TextSpan(
                                   text: '\$',
                                   style: TextStyle(
                                     fontSize: 16,
@@ -56,7 +59,7 @@ class JuiceWidget extends StatelessWidget {
                                 ),
                                 TextSpan(
                                   text: juices.price,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     fontSize: 30,
                                     fontWeight: FontWeight.w800,
                                   ),
@@ -64,12 +67,12 @@ class JuiceWidget extends StatelessWidget {
                               ],
                             ),
                           ),
-                          const SizedBox(
+                          SizedBox(
                             height: 32,
                             width: 80,
                             child: MyButton(
                               text: 'Buy Now',
-                              textColor: Color(0xFFDC691F),
+                              textColor: juices.color,
                             ),
                           )
                         ],

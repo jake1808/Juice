@@ -5,7 +5,7 @@ import 'package:juice/Screens/Home/widgets/juice_widget.dart';
 import 'package:juice/repository/juice_list.dart';
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

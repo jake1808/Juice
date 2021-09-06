@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import 'package:juice/models/jucie.dart';
+import '../models/jucie.dart';
 
 final List<JuiceEntity> juiceList = [
   JuiceEntity(
