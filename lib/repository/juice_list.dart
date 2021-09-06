@@ -15,4 +15,10 @@ final List<JuiceEntity> juiceList = [
     price: '25.99',
     color: const Color(0xFFDC691F),
   ),
+  JuiceEntity(
+    name: 'Besom Orange Juice',
+    image: 'https://flutter4fun.com/wp-content/uploads/2021/09/juice2.png',
+    price: '25.99',
+    color: const Color(0xFFDC691F),
+  ),
 ];

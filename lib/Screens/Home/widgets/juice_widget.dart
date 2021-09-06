@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../constants.dart';
 import '../../../models/jucie.dart';
 
 import 'my_button.dart';
@@ -108,11 +109,10 @@ class JuiceText extends StatelessWidget {
         // ignore: prefer_const_constructors
         Text(
           juices.name,
-          //TODO: replace text style
+
           // ignore: prefer_const_constructors
-          style: TextStyle(
+          style: kTextStyle.copyWith(
             fontSize: 20,
-            color: Colors.white,
           ),
         ),
         RichText(
@@ -126,7 +126,7 @@ class JuiceText extends StatelessWidget {
               ),
               TextSpan(
                 text: juices.price,
-                style: const TextStyle(
+                style: kTextStyle.copyWith(
                   fontSize: 30,
                   fontWeight: FontWeight.w800,
                 ),
