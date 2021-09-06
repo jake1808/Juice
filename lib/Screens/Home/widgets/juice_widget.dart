@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../constants.dart';
 import '../../../models/jucie.dart';
-
 import 'my_button.dart';
 
 class JuiceWidget extends StatelessWidget {
